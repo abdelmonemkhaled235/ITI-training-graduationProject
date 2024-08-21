@@ -1,0 +1,697 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zagazig University |Student Results</title>
+   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #3a3a3a, #000);
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+nav {
+    background: rgba(0, 0, 0, 0.9);
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+nav .logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffeb3b;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a.active {
+            background-color: #ffeb3b;
+            color: #000;
+            border-radius: 5px;
+        }
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #ffeb3b;
+    color: #000;
+    border-radius: 5px;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 40px;
+    margin: 50px auto;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    animation: fadeIn 1s ease-in-out;
+    overflow: auto;
+}
+
+h1 {
+    margin-bottom: 20px;
+    color: #ffeb3b;
+    font-size: 2.5em;
+    letter-spacing: 2px;
+}
+
+form {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #ffeb3b;
+    font-size: 1.2em;
+}
+
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid #ffeb3b;
+    border-radius: 10px;
+    box-sizing: border-box;
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #fff;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #fff;
+    outline: none;
+}
+
+button {
+    padding: 15px 20px;
+    border: none;
+    border-radius: 10px;
+    background-color: #ffeb3b;
+    color: #000;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    width: 100%;
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+button:hover {
+    background-color: #fff;
+    transform: translateY(-2px);
+}
+
+.results-container {
+    margin-top: 20px;
+    text-align: left;
+    animation: fadeIn 1s ease-in-out;
+    margin-bottom: 50px;
+}
+
+.student-info-banner {
+    background: rgba(0, 0, 0, 0.7);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.student-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    color: #ffeb3b;
+    font-weight: bold;
+}
+
+.student-info div {
+    flex: 1 1 45%;
+    margin: 10px 0;
+}
+
+.results-header {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+}
+
+.results-header div {
+    background: rgba(255, 235, 59, 0.2);
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-weight: bold;
+    color: #ffeb3b;
+}
+
+.results-table {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    overflow: auto;
+}
+
+.results-table th, .results-table td {
+    padding: 12px 15px;
+    border: 1px solid #ffeb3b;
+    text-align: center;
+    color: #fff;
+}
+
+.results-table th {
+    background-color: rgba(255, 235, 59, 0.2);
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.results-table tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.results-table tr:hover {
+    background-color: rgba(255, 235, 59, 0.1);
+}
+
+footer {
+    background: rgba(0, 0, 0, 0.9);
+    color: #ffeb3b;
+    text-align: center;
+    position:fixed;
+    bottom: 0px;
+    padding: 10px 0;
+    width: 100%;
+    font-size: 0.9em;
+    letter-spacing: 1px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media (max-width: 600px) {
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .container {
+        width: 95%;
+    }
+
+    .results-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .results-header div {
+        margin-bottom: 10px;
+    }
+}
+
+   </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Zagazig University</div>
+        <ul>
+            <li><a href="http://localhost:4200/">Home</a></li>
+            <li><a href="/results" class="active">Results</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+    <div style="height: 50px;"></div>
+        <div class="student-info-banner" style="padding-top: 20px;">
+            <div class="student-info">
+                <div><strong>Student Name:</strong> AbdElmoneim Khaled</div>
+                <div><strong>Student ID:</strong> 12345</div>
+                <div><strong>Current Semester:</strong> 4</div>
+                <div><strong>Total GPA:</strong> 3.340</div>
+                <div><strong>Graduation Year:</strong> 2026</div>
+            </div>
+        </div>
+
+        <div style="height: 50px;"></div>
+    
+        <div class="results-header">
+            <div>Result of Semester One:</div>
+            <div>Total: 481.00</div>
+            <div>Rate: 80.167</div>
+            <div>Rating: B+</div>
+            <div>Points: 3.247</div>
+            <div>Passed Hours: 17</div>
+        </div>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Serial</th>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Hours</th>
+                    <th>Points</th>
+                    <th>Grade</th>
+                    <th>Rating</th>
+                    <th>Pass</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>HU100</td>
+                    <td>English</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>2</td>
+                    <td>3.30</td>
+                    <td>80.00</td>
+                    <td>HighVeryGood</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>BS100</td>
+                    <td>Mathematics I</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.70</td>
+                    <td>88.00</td>
+                    <td>Excellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>BS102</td>
+                    <td>Physics of computing</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>2.40</td>
+                    <td>69</td>
+                    <td>Good</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>BS103</td>
+                    <td>Probability and Statistics</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.70</td>
+                    <td>86</td>
+                    <td>Excellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>CS100</td>
+                    <td>Introduction to Computional Thinking</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>2.40</td>
+                    <td>68</td>
+                    <td>Good</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>CS101</td>
+                    <td>Computer Programming I</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>4.00</td>
+                    <td>90</td>
+                    <td>HighExcellent</td>
+                    <td>✔</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div class="results-header">
+            <div>Result of Semester Two:</div>
+            <div>Total: 462.00</div>
+            <div>Rate: 77.00</div>
+            <div>Rating: B</div>
+            <div>Points: 2.982</div>
+            <div>Passed Hours: 17</div>
+        </div>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Serial</th>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Hours</th>
+                    <th>Points</th>
+                    <th>Grade</th>
+                    <th>Rating</th>
+                    <th>Pass</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>HU102</td>
+                    <td>Social, Ethical, and Professional Issues in Computing</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>2</td>
+                    <td>3.30</td>
+                    <td>83.00</td>
+                    <td>HighVeryGood</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>HU103</td>
+                    <td>Human Rights and Anticorruption</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>0</td>
+                    <td>4.00</td>
+                    <td>94.00</td>
+                    <td>HighExcellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>BS101</td>
+                    <td>Mathematics II</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.30</td>
+                    <td>81.00</td>
+                    <td>HighVeryGood</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>IT100</td>
+                    <td>Digital Logic Design</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.00</td>
+                    <td>79.00</td>
+                    <td>VeryGood</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>DS100</td>
+                    <td>Operations Research</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.00</td>
+                    <td>77.00</td>
+                    <td>VeryGood</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>CS103</td>
+                    <td>Discrete Structures</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>2.40</td>
+                    <td>67.00</td>
+                    <td>Good</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>CS102</td>
+                    <td>Computer Programming II</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.00</td>
+                    <td>75.00</td>
+                    <td>VeryGood</td>
+                    <td>✔</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div class="results-header">
+            <div>Result of Semester Three:</div>
+            <div>Total: 517.00</div>
+            <div>Rate: 86.167</div>
+            <div>Rating: A</div>
+            <div>Points: 3.635</div>
+            <div>Passed Hours: 17</div>
+        </div>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Serial</th>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Hours</th>
+                    <th>Points</th>
+                    <th>Grade</th>
+                    <th>Rating</th>
+                    <th>Pass</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>HU101</td>
+                    <td>Report Writing and Presentation Skills</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>2</td>
+                    <td>3.30</td>
+                    <td>84.00</td>
+                    <td>HighVeryGood</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>BS201</td>
+                    <td>Mathematics III</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.70</td>
+                    <td>85.00</td>
+                    <td>Excellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>CS200</td>
+                    <td>Data Structures</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>4.00</td>
+                    <td>94.00</td>
+                    <td>HighExcellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>IT200</td>
+                    <td>Computer Organization and Architecture</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.70</td>
+                    <td>86.00</td>
+                    <td>Excellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>IS200</td>
+                    <td>Database Systems</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.70</td>
+                    <td>87.00</td>
+                    <td>Excellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>CS201</td>
+                    <td>Operating Systems</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.30</td>
+                    <td>81.00</td>
+                    <td>HighVeryGood</td>
+                    <td>✔</td>
+                </tr>
+            </tbody>
+        </table>
+    
+        <div class="results-header">
+            <div>Result of Semester Four:</div>
+            <div>Total: 506.00</div>
+            <div>Rate: 84.333</div>
+            <div>Rating: B+</div>
+            <div>Points: 3.488</div>
+            <div>Passed Hours: 17</div>
+        </div>
+        <table class="results-table">
+            <thead>
+                <tr>
+                    <th>Serial</th>
+                    <th>Subject Code</th>
+                    <th>Subject Name</th>
+                    <th>Max</th>
+                    <th>Min</th>
+                    <th>Hours</th>
+                    <th>Points</th>
+                    <th>Grade</th>
+                    <th>Rating</th>
+                    <th>Pass</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>0</td>
+                    <td>HU100</td>
+                    <td>Organizational Behavior</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>2</td>
+                    <td>4.00</td>
+                    <td>90.00</td>
+                    <td>HighExcellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>IT200</td>
+                    <td>Computer Graphics</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.70</td>
+                    <td>87.00</td>
+                    <td>Excellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>IS200</td>
+                    <td>Systems Analysis and Design</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.30</td>
+                    <td>80.00</td>
+                    <td>HighVeryGood</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>CS200</td>
+                    <td>Algorithms</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>2.40</td>
+                    <td>65.00</td>
+                    <td>Good</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>CS200</td>
+                    <td>Artificial Intelligence</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>3.70</td>
+                    <td>89.00</td>
+                    <td>Excellent</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>IT200</td>
+                    <td>Computer Networks</td>
+                    <td>100</td>
+                    <td>50</td>
+                    <td>3</td>
+                    <td>4.00</td>
+                    <td>95.00</td>
+                    <td>HighExcellent</td>
+                    <td>✔</td>
+                </tr>
+            </tbody>
+        </table>
+    
+   
+</body>
+<footer>
+    <p> All rights reserved 2024 &copy;</p>
+    <div class="social-icons">
+        <a href="/prototype"><i class="fab fa-facebook-f"></i></a>
+        <a href="/prototype"><i class="fab fa-twitter"></i></a>
+        <a href="/prototype"><i class="fab fa-linkedin-in"></i></a>
+        <a href="/prototype"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+</html>

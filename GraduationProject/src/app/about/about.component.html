@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zagazig University| About Us</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+        /* Google Icon CDN */
+        @import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #3a3a3a, #000);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffeb3b;
+        }
+        @media (max-width: 767px) {
+            nav .menu{
+                width: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                cursor: pointer;
+            }
+            nav .menu span{
+                height: 3px;
+                background-color: #ffeb3b;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            nav .sg:hover ul{
+                display: block;
+
+            }
+            nav .sg{
+                position: relative;
+            }
+            nav .sg ul{
+                display: none;
+                /* display: block; */
+                position: absolute;
+                list-style: none;
+                top: -20px;
+                left: -60px;
+                margin-top: 40px;
+                height: 150px;
+                width: 500px;
+                background-color: #00000054;
+                border-radius: 20px;
+                padding: 30px 20px 20px 20px;
+                transition: 0.3s;
+            }
+            nav .sg ul li:hover a{
+                padding-left: 30px;
+            }
+            nav .sg ul li{
+                margin-top: 20px;
+            }
+            nav .sg li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: 0.3s ease, color 0.3s ease;
+            border-radius: 8px;
+        }
+        nav .w li{
+            display: none;
+        }
+        }
+        @media (min-width: 767px) {
+            nav .sg ul{
+                display: none;
+            }
+            
+        }
+
+        nav .w {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            transition: 0.3s ease, color 0.3s ease;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+
+        nav ul li a.active {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+
+        .hero {
+            background: url('https://www.yourimagelink.com/about-hero.jpg') no-repeat center center/cover;
+            height: 60vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffeb3b;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero div {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5em;
+            margin: 0;
+            padding: 20px;
+            letter-spacing: 4px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+        }
+
+        .hero p {
+            font-size: 1.4em;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+        .container {
+            flex: 1;
+            padding: 60px 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            color: #ffeb3b;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #ffeb3b;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+
+        .section p, .section .team-member {
+            font-size: 1.3em;
+            line-height: 1.8;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .team-member {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        .team{
+            position: relative;
+            bottom: 20px;
+        }
+
+        .team-member .text4{
+            text-align: left;
+        }
+        #s{
+            color: yellowgreen;
+            font-weight: 800;
+        }
+        #w{
+            color: yellowgreen;
+            font-weight: 800;
+        }
+        .big{
+            margin-top: 75px;
+        }
+
+        .team-member img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+
+        .team-member h3 {
+            font-size: 1.8em;
+            color: #ffeb3b;
+            margin: 0;
+        }
+
+        .team-member p {
+            font-size: 1.2em;
+            margin: 5px 0;
+            text-align: left;
+        }
+
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+        /* media phone small */
+        @media(min-width: 602px) and (max-width: 991px){
+            .timeline{
+                display: grid;
+                grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            }
+        }
+        @media (max-width:991px){
+            .timeline::after{
+                display: none;
+            }
+        } 
+        @media (min-width: 991px){
+            .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+        .timeline-item:nth-child(even) {
+            transform: translateX(100%);
+        }
+        }
+        .timeline::after {
+            content: "";
+            position: absolute;
+            width: 6px;
+            background-color: #ffeb3b;
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .timeline-item {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            position: relative;
+            width: 45%;
+            margin: 10px 0;
+        }
+
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #ffeb3b;
+            top: 14px;
+            left: 10px;
+            transform: translateX(-50%);
+            z-index: 1;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            left: auto;
+            right: -10px;
+        }
+
+        .achievements {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+            gap: 20px;
+        }
+        .icon1{
+            margin-top: 20px;
+            font-size:100px;
+            color: yellow;
+            font-variation-settings: "wght" 400;
+            padding: 10px;
+        }
+
+
+        .achievement {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 20px;
+            height: 500px;
+            transition: 0.4s;
+            min-width: 300px;
+        }
+
+        .achievement h3 {
+            font-size: 2em;
+            color: #ffeb3b;
+            margin-bottom: 30px;
+        }
+        .achievement:hover{
+            transform: translateY(-15px);
+        }
+
+        .achievement p {
+            font-size: 1.5em;
+            width: 300px;
+        }
+        .center-card{
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            align-items: center;
+        }
+        .card1{
+            border: 2px solid yellow;
+            min-height: 400px;
+            padding: 20px;
+            width: 400px;
+            text-align: center;
+            margin-top: 40px;
+            overflow: auto;
+        }
+        .card1 h3{
+            border: 2px dashed yellow;
+            padding: 20px;
+            font-size: 30px;
+            margin: 50px 10px;
+            position: relative;
+        }
+        footer {
+            background: rgba(46, 46, 46, 0.9);
+            color: #ffeb3b;
+            text-align: center;
+            height: 68px;
+            padding: 30px 20px;
+            width: 97.5%;
+            font-size: 1em;
+            letter-spacing: 1px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        footer .social-icons {
+            margin-top: 15px;
+        }
+
+        footer .social-icons a {
+            color: #ffeb3b;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.5em;
+            }
+
+            .hero p {
+                font-size: 1.2em;
+            }
+
+            .section h2 {
+                font-size: 2em;
+            }
+
+            .timeline-item {
+                width: 100%;
+                left: 0;
+                transform: none;
+            }
+
+            .timeline-item:nth-child(even)::before {
+                left: -10px;
+                right: auto;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Zagazig University</div>
+        <div class="sg">
+            <span class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+                <ul>
+                    <li><a href="http://localhost:4200/" class="active">Home</a></li>
+                    <li><a href="/results">Results</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    
+                </ul>
+        </div>
+        <ul class="w">
+            <li><a href="http://localhost:4200/" class="active">Home</a></li>
+            <li><a href="/results">Results</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">AboutUs</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <h1>About Us</h1>
+            <p>Learn more about our journey, mission, and the team driving our success.</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Our History Section -->
+        <section class="section">
+            <h2>Our History</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Founded in 1997</h3>
+                    <p>Our college was established with a mission to provide high-quality education and create future leaders.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Opened New Campus in 2000</h3>
+                    <p>With growing demand, we expanded our facilities to accommodate more students and offer additional programs.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Achieved Accreditation in 2010</h3>
+                    <p>Our commitment to academic excellence was recognized with accreditation from national education bodies.</p>
+                </div>
+                <div class="timeline-item">
+                    <h3>Introduced Online Programs in 2018</h3>
+                    <p>We embraced technology to offer flexible learning options and reach students globally.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mission and Values Section -->
+        <section class="section">
+            <h2>Our Mission & Values</h2>
+            <p>Our mission is to provide a transformative education that empowers students to achieve their full potential. We are committed to fostering an inclusive and dynamic learning environment that encourages innovation, critical thinking, and personal growth.</p>
+            <p>Our core values include integrity, excellence, inclusivity, and community engagement. We believe in nurturing each student’s unique talents and preparing them to make a positive impact in the world.</p>
+        </section>
+
+        <!-- Meet Our Team Section -->
+        <section class="section info">
+            <h2>Meet Our Team</h2>
+            <div class="big">
+                <div class="team-member team">
+                    <img src="data:image/jpeg;base64,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" alt="Dr. Khaled Ali Dirndali">
+                    <div class="text4">
+                        <h3>Dr. Khaled Ali Dirndali </h3>
+                        <p id="s">President</p>
+                        <p>With over 20 years of experience in education, Dr. Khaled Ali Dirndali leads our University with a vision for academic excellence and innovation.</p>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img src="https://shorturl.at/FtuPS" alt="Dr. Atef Hussein">
+                    <div class="text4">
+                        <h3>Dr. Atef Hussein</h3>
+                        <p id="w">Director of Admissions</p>
+                        <p>Dr.Atef Hussein oversees our admissions process and is dedicated to helping prospective students find their path to success.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section class="section">
+            <h2>Our Achievements</h2>
+            <div class="achievements">
+                <div class="achievement">
+                    <span class="material-symbols-outlined icon1">military_tech</span>
+                    <h3>Top 10 National Ranking</h3>
+                    <p>Ranked among the top 10 colleges nationally for academic excellence and student satisfaction.</p>
+                </div>
+                <div class="achievement">
+                    <span class="material-symbols-outlined icon1">done_all</span>
+                    <h3>100+ Accredited Programs</h3>
+                    <p>Offering over 100 accredited programs across various disciplines to cater to diverse interests.</p>
+                </div>
+                
+                
+                <div class="achievement">
+                    <span class="material-symbols-outlined icon1 icon2">psychology</span>
+                    <h3>International Partnerships</h3>
+                    <p>Strong partnerships with universities and institutions around the world for global learning opportunities.</p>
+                </div>
+                <div class="achievement">
+                    <span class="material-symbols-outlined icon1">autorenew</span>
+                    <h3>Innovative Research Centers</h3>
+                    <p>State-of-the-art research centers focusing on cutting-edge projects and industry collaborations.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials Section -->
+        <section class="section">
+            <h2>What Our Students Say</h2>
+            <div class="center-card">
+                <div class="card1">
+                    <h3>Abdel Moneim Khaled</h3>
+                    <p>"The College provided me with the best education and opportunities to grow. The faculty is exceptional, and the programs are top-notch. I feel well-prepared for my future career!"</p>
+                </div>
+                <div class="card1">
+                    <h3>Abdel Moneim Reda</h3>
+                    <p>"The supportive environment and innovative approach to education made my experience at College Portal truly transformative. I highly recommend it to anyone seeking quality education."</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p> All rights reserved 2024 &copy;</p>
+        <div class="social-icons">
+            <a href="/prototype"><i class="fab fa-facebook-f"></i></a>
+            <a href="/prototype"><i class="fab fa-twitter"></i></a>
+            <a href="/prototype"><i class="fab fa-linkedin-in"></i></a>
+            <a href="/prototype"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

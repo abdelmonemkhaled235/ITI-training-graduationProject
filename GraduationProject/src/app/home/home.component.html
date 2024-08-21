@@ -1,0 +1,1267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zagazig University|Home</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+        @import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css');
+        @import url('<link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Archivo+Black&family=Archivo:ital,wght@0,100..900;1,100..900&family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Cabin:ital,wght@0,400..700;1,400..700&family=Concert+One&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Francois+One&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Lexend:wght@100..900&family=Mitr:wght@200;300;400;500;600;700&family=Modern+Antiqua&family=Public+Sans:ital,wght@0,100..900;1,100..900&family=Rowdies:wght@300;400;700&family=Rubik:ital,wght@0,300..900;1,300..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">');
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #3a3a3a, #000);
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.9);
+            color: #fff;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav .logo {
+            font-size: 2em;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: #ffeb3b;
+        }
+
+        @media (max-width: 767px) {
+            nav .menu{
+                width: 30px;
+                display: flex;
+                flex-wrap: wrap;
+                cursor: pointer;
+            }
+            nav .menu span{
+                height: 3px;
+                background-color: #ffeb3b;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+            nav .sg:hover ul{
+                display: block;
+
+            }
+            nav .sg{
+                position: relative;
+            }
+            nav .sg ul{
+                display: none;
+                /* display: block; */
+                position: absolute;
+                list-style: none;
+                top: -20px;
+                left: -60px;
+                margin-top: 40px;
+                height: 150px;
+                width: 500px;
+                background-color: #00000054;
+                border-radius: 20px;
+                padding: 30px 20px 20px 20px;
+                transition: 0.3s;
+            }
+            nav .sg ul li:hover a{
+                padding-left: 30px;
+            }
+            nav .sg ul li{
+                margin-top: 20px;
+            }
+            nav .sg li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            transition: 0.3s ease, color 0.3s ease;
+            border-radius: 8px;
+        }
+        nav .w li{
+            display: none;
+        }
+        }
+        @media (min-width: 767px) {
+            nav .sg ul{
+                display: none;
+            }
+            
+        }
+
+        nav .w {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: inline-flex;
+        }
+
+        nav ul li {
+            margin-left: 25px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 12px 20px;
+            transition: 0.3s ease, color 0.3s ease;
+            border-radius: 8px;
+        }
+
+        nav ul li a:hover {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+
+        nav ul li a.active {
+            background-color: #ffeb3b;
+            color: #000;
+        }
+
+        .hero {
+            background: url('https://www.yourimagelink.com/college-background.jpg') no-repeat center center/cover;
+            height: 80vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: #ffeb3b;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .hero::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero div {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 4.5em;
+            margin: 0;
+            padding: 20px;
+            letter-spacing: 4px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 12px;
+        }
+
+        .hero p {
+            font-size: 1.6em;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.6);
+            border-radius: 8px;
+        }
+
+        .container {
+            flex: 1;
+            padding: 60px 40px;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+
+        .section h2 {
+            font-size: 2.8em;
+            color: #ffeb3b;
+            margin-bottom: 30px;
+            text-align: center;
+            border-bottom: 3px solid #ffeb3b;
+            padding-bottom: 10px;
+            position: relative;
+        }
+
+    
+        .section p {
+            font-size: 1.3em;
+            line-height: 1.8;
+            text-align: justify;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 10px;
+        }
+
+        .card-container {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+        .card-container1 {
+            display: grid;
+            grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+            justify-items: center;
+            gap: 30px;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            max-width: 320px;
+            width: 100%;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .cards{
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+            max-width: 320px;
+            height: 300px;
+            width: 100%;
+            text-align: center;
+            transition: 0.5s ease,  0.3s ease;
+        }
+        .card h3, .cards h3 {
+            color: #ffeb3b;
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+
+        .card p, .cards p {
+            font-size: 1.1em;
+            margin-bottom: 20px;
+        }
+
+        .card:hover {
+            transform: translateY(-15px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+        }
+        .cards:hover{
+            transform: translateY(-15px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.7);
+        }
+        .card1::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            transition: 0.4s;
+            height: 100%;
+            background: url('https://i.postimg.cc/1RnXLhQm/Computer.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card1{
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+            perspective: 300px;
+        }
+        .card1 .text55 p{
+            font-size: 12px;
+            max-width: 250px;
+            color: rgb(255, 255, 255);
+            font-weight: bold;
+            filter: drop-shadow(0 0 5px black);
+        }
+        .card1 .text55 h3{
+            filter: drop-shadow(0 0 5px black);
+        }
+        .card1:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card2{
+            perspective: 300px;
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card2::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            transition: 0.4s;
+            height: 100%;
+            background: url('https://i.postimg.cc/t4SzCZrQ/Business-Administration.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card2 .text55 h3 {
+            filter: drop-shadow(0 0 5px black);
+        } 
+        .card2 .text55 p{
+            filter: drop-shadow(0 0 5px black);
+            max-width: 300px;
+            font-size: 12px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .card2:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card3{
+            perspective: 300px;
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card3::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            transition: 0.4s;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/Sx3DfYcL/Engineer.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card3 .text55 p, .card4 .text55 p, .card5 .text55 p, .card6 .text55 p, .card7 .text55 p, .card8 .text55 p, .card9 .text55 p{
+            filter: drop-shadow(0 0 5px black);
+            max-width: 270px;
+            font-size: 15px;
+            font-weight: bold;
+            color: #ffffff;
+        }
+        .card3 .text55 h3, .card4 .text55 h3, .card5 .text55 h3, .card6 .text55 h3, .card7 .text55 h3, .card8 .text55 h3, .card9 .text55 h3 {
+            filter: drop-shadow(0 0 5px black);
+            font-size: 37px;
+        }
+        .card3:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card4{
+            perspective: 300px;
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card4::before {
+            content: "";
+            position: absolute;
+            transition: 0.4s;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/rFDkVbCf/Biology.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card4:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card5{
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card5::before {
+            content: "";
+            position: absolute;
+            transition: 0.4s;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/rybHJpx9/Nursing.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card5:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card6{
+            position: relative;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card6::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            transition: 0.4s;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/Z5zDGDfB/Education.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card6:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card7{
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card7::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            transition: 0.4s;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/yNpqCygM/Physcology.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card7:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card8{
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card8::before {
+            content: "";
+            position: absolute;
+            transition: 0.4s;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/XNyRtFVP/Agreeculture.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card8:hover::before{
+            filter: grayscale(0.6);
+        }
+        .card9{
+            height: 100%;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: 0.4s;
+        }
+        .card9::before {
+            content: "";
+            transition: 0.4s;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 10px;
+            width: 100%;
+            height: 100%;
+            background: url('https://i.postimg.cc/QMyzyNvs/Business.webp') no-repeat ;
+            background-size: cover;
+            filter: grayscale(1);
+        }
+        .card9:hover::before{
+            filter: grayscale(0.6);
+        }
+
+        .cards .text55 p {
+            font-size: 16px;
+            font-family: "Gelasio", serif;
+            font-weight: 900;
+            filter: drop-shadow( 0 0 10px darkcyan);
+            color:white;
+        }
+        .cta {
+            background-color: #ffeb3b;
+            color: #000;
+            padding: 30px;
+            text-align: center;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+            max-width: 900px;
+            margin: 0 auto;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta h2 {
+            font-size: 2.2em;
+            margin-bottom: 15px;
+        }
+
+        .cta p {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+        }
+
+        .cta a {
+            display: inline-block;
+            background-color: #000;
+            color: #ffeb3b;
+            padding: 12px 24px;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta a:hover {
+            background-color: #333;
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.9);
+            color: #ffeb3b;
+            text-align: center;
+            padding: 30px 20px;
+            width: 95%;
+            font-size: 1em;
+            letter-spacing: 1px;
+            box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        footer .social-icons {
+            margin-top: 15px;
+        }
+
+        footer .social-icons a {
+            color: #ffeb3b;
+            margin: 0 15px;
+            text-decoration: none;
+            font-size: 1.5em;
+            transition: color 0.3s ease;
+        }
+
+        footer .social-icons a:hover {
+            color: #fff;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+
+            .hero h1 {
+                font-size: 2.8em;
+            }
+
+            .hero p {
+                font-size: 1.4em;
+            }
+
+            .section h2 {
+                font-size: 2.4em;
+            }
+
+            .card-container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+
+
+    .sectionp h2 {
+    font-size: 2.8em;
+    color: #ffeb3b;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 3px solid #ffeb3b;
+    padding-bottom: 10px;
+    position: relative;
+    animation: slideIn 1s ease-in-out;
+}
+
+/* Card Container */
+.card-containerp {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Card Styling */
+.cardp {
+    background: linear-gradient(135deg, #2a2a2a, #3b3b3b);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.7);
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+}
+
+.cardp h3 {
+    color: #ffeb3b;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    position: relative;
+    font-weight: 500;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.cardp p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #dddddd;
+    animation: fadeInp 2s ease-in-out;
+}
+
+.cardp a {
+    text-decoration: none;
+    color: #ffeb3b;
+    font-weight: 600;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.cardp a:hover {
+    color: #fff;
+    text-shadow: 2px 2px 6px #ffeb3b;
+}
+
+.cardp:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+    background: linear-gradient(135deg, #3b3b3b, #4b4b4b);
+}
+
+.cardp h3::before {
+    content: "❓";
+    position: absolute;
+    left: -25px;
+    color: #ffeb3b;
+    font-size: 1.5em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Slide in animation */
+@keyframes slideInp {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeInp {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+
+
+
+/* News and Announcements Section */
+.sectiond h2 , .h22 {
+    font-size: 2.8em;
+    color: #ffeb3b;
+    margin-bottom: 30px;
+    text-align: center;
+    border-bottom: 3px solid #ffeb3b;
+    padding-bottom: 10px;
+    position: relative;
+    background: linear-gradient(135deg, #4b4b4b, #6c6c6c);
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Card Container */
+.card-containerd {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Card Styling */
+.cardd {
+    background: linear-gradient(135deg, #2a2a2a, #3b3b3b);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s ease;
+    position: relative;
+}
+
+.cardd h3 {
+    color: #ffeb3b;
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    position: relative;
+    font-weight: 500;
+    animation: fadeInd 1s ease-in-out;
+}
+
+.cardd p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #dddddd;
+    animation: fadeInd 1.5s ease-in-out;
+}
+
+/* Adding decorative elements */
+.cardd::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, #ffeb3b, red 50%, transparent 50%);
+    background-size: 200% 100%;
+    background-repeat: no-repeat;
+    animation: animateStripes 2s linear infinite;
+}
+
+.cardd:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.9);
+    background: linear-gradient(135deg, #3b3b3b, #4b4b4b);
+}
+
+.cardd h3::before {
+    content: "📜";
+    position: absolute;
+    left: -30px;
+    color: #ffeb3b;
+    font-size: 1.4em;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Stripes animation */
+@keyframes animateStripes {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 100% 0%;
+    }
+}
+
+/* Fade in animation */
+@keyframes fadeInd {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.card1 h3{
+    height: 100px;
+    letter-spacing: -1px;
+}
+.cards .text55{
+    transition: 0.5s;
+}
+
+.cards:hover h3 span{
+    position: relative;
+    display: inline-block;
+  animation: waviy 1s infinite;
+  animation-delay: calc(.1s * var(--i));
+   
+   
+}
+
+@keyframes waviy {
+  0%,40%,100% {
+    transform: translateY(0)
+  }
+  20% {
+    transform: translateY(-10px)
+  }
+}
+.cards .text55 h3 span:nth-child(2) {
+    animation-delay: .1s;
+}
+
+.cards .text55 h3 span:nth-child(3) {
+    animation-delay: .5s;
+}
+
+.cards .text55 h3 span:nth-child(4) {
+    animation-delay: 1s;
+}
+
+.cards .text55 h3 span:nth-child(5) {
+    animation-delay: 1.5s;
+}
+
+.cards .text55 h3 span:nth-child(6) {
+    animation-delay: 2s;
+}
+
+.cards .text55 h3 span:nth-child(7) {
+    animation-delay: 2.5s;
+}
+
+.cards .text55 h3 span:nth-child(8) {
+    animation-delay: 3s;
+}
+
+
+@keyframes bounce {
+    100% {
+        top: -10px;
+        
+    }
+}
+
+
+.under{
+    
+    border-bottom: 3px solid #ffeb3b;
+
+}
+
+    </style>
+</head>
+
+<body>
+    <nav>
+        <div class="logo">Zagazig University</div>
+        <div class="sg">
+            <span class="menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </span>
+                <ul>
+                    <li><a href="http://localhost:4200/" class="active">Home</a></li>
+                    <li><a href="/results">Results</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    
+                </ul>
+        </div>
+        <ul class="w">
+            <li><a href="http://localhost:4200/" class="active">Home</a></li>
+            <li><a href="/results">Results</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/about">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="hero">
+        <div>
+            <h1>
+                Welcome to Zagazig University
+            </h1>
+            <p>Your gateway to success</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Introduction Section -->
+        <section class="section">
+            <h2>About Our University</h2>
+            <p>Zagazig University aspires to be a beacon of knowledge, leadership, 
+                and innovation with a prominent global ranking, as part of the transition 
+                to fourth-generation universities. It aims to contribute to sustainable economic 
+                and social development towards achieving Egypt’s Vision 2030
+            </p>
+        </section>
+
+        <div class="under"></div>
+        <div style="height: 20px;"></div>
+
+        <!-- Featured Programs Section -->
+        <section class="section">
+            <div class="under">
+
+            <h2 class="h22">Our Programs</h2>
+            </div>
+            <div style="height: 40px;"></div>
+            <div class="card-container1">
+                <div class="cards">
+                    <div class="card1">
+                        <div class="text55">
+                            <h3>
+                                <span>C</span>
+                                <span>o</span>
+                                <span>m</span>
+                                <span>p</span>
+                                <span>u</span>
+                                <span>t</span>
+                                <span>e</span>
+                                <span>r</span>
+                                <br> Science
+                            </h3>
+                            <p style="text-align: center;">Explore the world of technology with our comprehensive Computer Science program.</p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card2">
+                        <div class="text55">
+                            <h3>
+                            <span>B</span>
+                            <span>u</span>
+                            <span>s</span>
+                            <span>i</span>
+                            <span>n</span>
+                            <span>e</span>
+                            <span>s</span>
+                            <span>s</span>
+                            <br>
+                            Administration
+                        </h3>
+                            Administration
+                            <p style="text-align: center;">Covers management principles marketing finance and entrepreneurship. It prepares students for leadership roles in various business sectors.</p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card3">
+                        <div class="text55">
+                            <h3>
+                                <span>E</span>
+                                <span>n</span>
+                                <span>g</span>
+                                <span>i</span>
+                                <span>n</span>
+                                <span>e</span>
+                                <span>e</span>
+                                <span>r</span>
+                                <span>i</span>
+                                <span>n</span>
+                                <span>g</span>
+                                <br>
+                            </h3>
+                            <p style="text-align: center;"> Includes various disciplines like civil, mechanical, and electrical engineering. It involves designing, building, and maintaining infrastructure and technology.</p>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card4">
+                        <div class="text55">
+                            <h3>
+                                <span>B</span>
+                                <span>i</span>
+                                <span>o</span>
+                                <span>l</span>
+                                <span>o</span>
+                                <span>g</span>
+                                <span>y</span>
+                                <br>
+                            </h3>
+                            <p style="text-align: center;"> Examines living organisms and their interactions with the environment. It includes areas like genetics, ecology, and microbiology.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card5">
+                        <div class="text55">
+                            <h3>
+                                <span>N</span>
+                                <span>u</span>
+                                <span>r</span>
+                                <span>s</span>
+                                <span>i</span>
+                                <span>n</span>
+                                <span>g</span>
+                            </h3>
+                            <p style="text-align: center;"> Prepares students for careers in healthcare, focusing on patient care, medical procedures, and health management. It includes clinical practice and theoretical coursework.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card6">
+                        <div class="text55">
+                            <h3>
+                                <span>E</span>
+                                <span>d</span>
+                                <span>u</span>
+                                <span>c</span>
+                                <span>a</span>
+                                <span>t</span>
+                                <span>i</span>
+                                <span>o</span>
+                                <span>n</span>
+                            </h3>
+                            <p style="text-align: center;"> Covers teaching methods, curriculum development, and educational psychology. It trains future educators to work in schools and educational institutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cards">
+                    <div class="card7">
+                        <div class="text55">
+                            <h3>
+                                <span>p</span>
+                                <span>s</span>
+                                <span>y</span>
+                                <span>c</span>
+                                <span>h</span>
+                                <span>o</span>
+                                <span>l</span>
+                                <span>o</span>
+                                <span>g</span>
+                                <span>y</span>
+                                <br>
+                            </h3>
+                            <p style="text-align: center;">Studies human behavior, mental processes, and psychological disorders. It prepares students for careers in therapy, counseling, and research. </p>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card8">
+                        <div class="text55">
+                            <h3>
+                                <span>E</span>
+                                <span>c</span>
+                                <span>o</span>
+                                <span>n</span>
+                                <span>o</span>
+                                <span>m</span>
+                                <span>i</span>
+                                <span>c</span>
+                                <span>s</span>
+                                <br>
+                            </h3>
+                            <p style="text-align: center;">Analyzes the production, distribution, and consumption of goods and services. Students study economic theory, policy, and quantitative methods.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="cards">
+                    <div class="card9">
+                        <div class="text55">
+                            <h3>
+                                <span>E</span>
+                                <span>n</span>
+                                <span>v</span>
+                                <span>i</span>
+                                <span>r</span>
+                                <span>o</span>
+                                <span>n</span>
+                                <span>m</span>
+                                <span>e</span>
+                                <span>n</span>
+                                <span>t</span>
+                                <br>
+                                Science
+                            </h3>
+                            <p style="text-align: center;">Focuses on understanding and solving environmental problems. It includes studying ecosystems, conservation, and sustainable practices. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="under"></div>
+
+        <div style="height: 20px;"></div>
+
+
+        <!-- Student Testimonials Section -->
+        <section class="section">
+            <div class="under">
+
+                <h2 class="h22">Student Testimonials</h2>
+            </div>
+            <div style="height: 20px;"></div>
+
+            <div style="height: 10px;"></div>
+            <div class="card-container">
+                <div class="card">
+                    <h3>AbdElmoneim Khaled</h3>
+                    <p style="text-align: center;">"The Computer Science program provided me with the skills and knowledge to excel in my career. The faculty is amazing!"</p>
+                </div>
+                <div class="card">
+                    <h3>AbdElmoneim Reda</h3>
+                    <p style="text-align: center;">"Good! Good!"</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="under"></div>
+
+        <!-- Upcoming Events Section -->
+        <section class="section">
+            <div class="under">
+
+                <h2 class="h22">Upcoming Events</h2>
+            </div>
+
+            <div style="height: 30px;"></div>
+            <div class="card-container">
+                <div class="card">
+                    <h3>Open House</h3>
+                    <p style="text-align: center;">Join us for our Open House event on August 15th. Meet our faculty and explore our campus.</p>
+                </div>
+                <div class="card">
+                    <h3>Annual Science Fair</h3>
+                    <p style="text-align: center;">Our Annual Science Fair will be held on September 5th. Come see the innovative projects created by our students.</p>
+                </div>
+                <div class="card">
+                    <h3>Career Day</h3>
+                    <p style="text-align: center;">Career Day will take place on October 10th. Network with industry professionals and explore career opportunities.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="under"></div>
+
+        <!-- News and Announcements Section -->
+        <section class="sectiond">
+
+            <div class="under">
+
+                <h2>News and Announcements</h2>
+            </div>
+            <div class="card-containerd">
+                <div class="cardd">
+                    <h3>New Research Facilities</h3>
+                    <p style="text-align: center;">We are excited to announce the opening of our new research facilities, which will enhance our students' learning experience.</p>
+                </div>
+                <div class="cardd">
+                    <h3>Scholarships Available</h3>
+                    <p style="text-align: center;">Applications for our new scholarships are now open. Check out the eligibility criteria and apply today.</p>
+                </div>
+                <div class="cardd">
+                    <h3>🎓 Graduation Day 🎓</h3>
+                    <p style="text-align: center;">Join us on 15th Sep at 5PM to celebrate the Class of 2024. Congratulations to all graduates! 🎉</p>
+                </div>
+            </div>
+        </section>
+        
+        <div style="height: 40px;"></div>
+        <div class="under"></div>
+
+
+        <!-- Frequently Asked Questions Section -->
+        <section class="sectionp">
+            <div class="under">
+                
+                <h2 class="h22">Frequently Asked Questions</h2>
+            </div>
+
+            <div style="height: 20px;"></div>
+            <div class="card-containerp">
+                <div class="cardp">
+                    <h3>How do I apply to the college?</h3>
+                    <p>Visit our <a href="/prototype" style="text-decoration-style: none; color: #edd70bc4;">Apply Now</a> page for detailed instructions on the application process.</p>
+                </div>
+                <div class="cardp">
+                    <h3 style="padding-left: 20px;">What are the tuition fees?</h3>
+                    <p>Tuition fees vary by program. Please check the <a href="/prototype"  style="text-decoration-style: none; color: #edd70bc4;">Tuition and Fees</a> page for detailed information.</p>
+                </div>
+                <div class="cardp">
+                    <h3>What scholarships are available?</h3>
+                    <p>We offer various scholarships. Visit our <a href="/prototype"  style="text-decoration-style: none; color: #edd70bc4;">Scholarships</a> page to learn more.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action Section -->
+        <section class="section" style="margin-top: 100px;">
+            <div class="cta">
+                <h2 style="color: #625b1cc4;">Join Us Today!</h2>
+                <p>Ready to take the next step in your education? Apply now to secure your spot in one of our prestigious programs.</p>
+                <a href="/prototype">Apply Now</a>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>All rights reserved 2024 &copy;</p>
+        <div class="social-icons">
+            <a href="/prototype"><i class="fab fa-facebook-f"></i></a>
+            <a href="/prototype"><i class="fab fa-twitter"></i></a>
+            <a href="/prototype"><i class="fab fa-linkedin-in"></i></a>
+            <a href="/prototype"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
